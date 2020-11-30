@@ -1,5 +1,9 @@
+canvas{
+  z-index: 10;
+  top:0;
+  position: fixed;
+}
 
-/**generali**/
 .light {
     background-color::#ffffff ;
     color: #000000;  /**#e6b3ff colore lilla**/
@@ -22,8 +26,6 @@
     padding: 0;
     font-family:ortica;
 }
-
-/**border**/
 .border-light {
     border-bottom:2px solid black;
 }
@@ -32,10 +34,7 @@
 }
 .border-ee {
     border-bottom:2px solid yellow;
-;
 }
-
-/**bottoni**/
 .button-ee {
   right:2.5vw;
   position: absolute;
@@ -72,7 +71,6 @@
   border: 2px solid yellow;
   cursor: pointer;
     }
-
 .button-light{
   right:2.5vw;
     position: absolute;
@@ -108,7 +106,6 @@
     border: 2px solid #000000;
     transform: translateY(5px);
   }
-
 .button-dark{
           right:2.5vw;
           position: absolute;
@@ -136,7 +133,7 @@
 
         }
 .button-dark:active{
-  right:2.5vw;
+          right:2.5vw;
           position: absolute;
           background-color: #ffffff;
           color: #000000;
@@ -146,7 +143,6 @@
           border-radius: 25px;
           transform: translateY(5px);
           border: 2px solid #ffffff;
-
         }
 
 /**francesca**/
@@ -228,8 +224,6 @@
   box-shadow: 10px 10px cyan;
 
 }
-
-/**testo base sans**/
 .testo-base-dark{
   font-family: sans-serif;
   color:white;
@@ -245,8 +239,6 @@
   color:cyan;
   font-size: 1.25vw
 }
-
-/**runner**/
 .runner-dark{
           bottom: 1.25vw;
           height: 1.25vw;
@@ -366,7 +358,6 @@ h2 span:hover {
 .light::-webkit-scrollbar-thumb {
   background-color: black;
 }
-
 .dark::-webkit-scrollbar {
   width: auto;
    }
@@ -377,7 +368,6 @@ h2 span:hover {
 .dark::-webkit-scrollbar-thumb {
   background-color: white;
 }
-
 .ee::-webkit-scrollbar {
   width: auto;
    }
@@ -389,11 +379,6 @@ h2 span:hover {
   background-color: cyan;
 
 }
-
-
-
-
-
 .on {
   visibility: visible;
 
@@ -431,7 +416,6 @@ h2 span:hover {
   position:fixed;
   z-index: 10;
 }
-
 #mode{
   top:1.25vw;
 }
@@ -455,7 +439,6 @@ img{
   left:1.25vw;
   position:absolute
 }
-
 a{
  color:inherit;
  text-decoration: none;
@@ -471,6 +454,10 @@ animation: flash linear 1s infinite;
 #scroll{
 -webkit-animation: flash linear 1s infinite;
 animation: flash linear 1s infinite;
+bottom:3.75vw;
+right:2.5vw;
+position:absolute
+
 }
 
 @-webkit-keyframes flash {
