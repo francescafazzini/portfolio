@@ -22,6 +22,12 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Cache-Control" content="no-cache">
     <meta property="og:title" content="FRANCESCA FAZZINI communication designer">
+    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=GIcVTvTV5v4bYAifOj7S6p-uX32-126BikubYiU-lWLnqDWrN0Vp0GNZ0UNbVLBo4hSyLJR-JFmfGee7QqLvml6yT9Eo_WkasUoRMp6cTWs" charset="UTF-8"></script>
+    <link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9kcmF3d2l0aGNvZGUuZ2l0aHViLmlvLzIwMjAtMDEtTWF0dGVvUmVwZXR0by8"/>
+    <script src="js/p5.min.js"></script>
+    <script src="js/sketch.js"></script>
+
+
 
 
 
@@ -68,6 +74,8 @@
 
       <div id="intro-titolo-ee"> <h1>  Hi! I am Francesca, a young communication designer with a bachelor's degree from Polytechnic University of Milan.</h1></div>
       <div id="intro-titolo-base"> <h2>  Hi! I am Francesca, a young communication designer with a bachelor's degree from Polytechnic University of Milan.</h2></div>
+      <div id="scroll" class="testo-base-dark" >Scroll down to see my projects! </div>
+
 
 
   </section>
@@ -161,9 +169,19 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 <script type="text/javascript">
 
+
+
 <!---->
 
+window.onload=function(){
+document.querySelector("canvas").style.display="none";
+}
+
+
+
+
 $(document).ready(function() {
+
         var keys = [];
         var code = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
         var contatti = document.getElementById("wannasayhi-box");
