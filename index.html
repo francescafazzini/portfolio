@@ -6,7 +6,7 @@
     <link rel="shortcut icon" href="i/icon0.ico"> <!-- icona da cambiare-->
     <link rel="stylesheet" href="css/indexDesktop.css" media="screen and (min-width: 1000px)">
     <link rel="stylesheet" href="css/indexMobile.css" media="screen and (max-width: 1000px)">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--condizione iniziale viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" > <!--condizione iniziale viewport-->
     <meta name="topic" content="communication design">
     <meta name="keywords" content="design, Francesca Fazzini, comunicazione, communication, editoria, editorial, Politecnico di Milano, tesi di laurea, Mario Piazza">
     <meta name="description" content="FRANCESCA FAZZINI communication designer">
@@ -22,8 +22,6 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Cache-Control" content="no-cache">
     <meta property="og:title" content="FRANCESCA FAZZINI communication designer">
-    <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=GIcVTvTV5v4bYAifOj7S6p-uX32-126BikubYiU-lWLnqDWrN0Vp0GNZ0UNbVLBo4hSyLJR-JFmfGee7QqLvml6yT9Eo_WkasUoRMp6cTWs" charset="UTF-8"></script>
-    <link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9kcmF3d2l0aGNvZGUuZ2l0aHViLmlvLzIwMjAtMDEtTWF0dGVvUmVwZXR0by8"/>
     <script src="js/p5.min.js"></script>
     <script src="js/sketch.js"></script>
 
@@ -38,17 +36,23 @@
 
   <body id="body" class="dark" style="overflow-x:hidden;overflow-y: scroll;cursor:default">
 
+<!--LOADER-->
+  <div id="loader-box" style="width:100vw;height:100vh;position:fixed;z-index:+10; background-color:black">
+    <div id="loader-txt" class="testo-base-dark" > Loading... </div>
+  </div>
+
+
 <!--HEADER E FOOTER-->
     <div id="header" style="width:100vw;height:auto;position:fixed;z-index:+9">
       <div id="francesca" class="francesca-dark" style="top:1.25vw" > FRANCESCA FAZZINI </div>
       <div id="tasti">
       <button id="mode"  class="button-dark"> LIGHT MODE </button>
       <button id="wannasayhi"  class="button-dark" > WANNA SAY HI? </button>
-      <button id="cv"  class="button-dark" ><a href="Fazzini_Francesca_CV.pdf" download target="_blank"> DOWNLOAD CV</a> </button>
+      <button id="cv"  class="button-dark" href="Fazzini_Francesca_CV.pdf"><a href="Fazzini_Francesca_CV.pdf" download target="_blank"> DOWNLOAD CV</a> </button>
     </div>
     </div>
 
-    <div id="runner" class="runner-dark">  <marquee direction="scroll">© Francesca Fazzini 2020 (In this website I hide an Easter egg, can you find it?)  </marquee></div>
+    <div id="runner" class="runner-dark">  <marquee direction="scroll">© Francesca Fazzini 2020 (I've hidden an Easter egg, try to find it!)  </marquee></div>
 
 
 
@@ -56,12 +60,15 @@
     <div id="container" class="off">
       <div id="chiudi"class="draggable">
         <div id="wannasayhi-box" class="off" >
-          <button id="close"   class="button-dark" style="right:1.25vw;width: 15vw; bottom:1.25vw"> CLOSE </button>
-          <div id="draggable" class="testo-base-dark" style="top:1.25vw;position:absolute;left:50%;transform:translate(-50%,0)">I'm draggable! </div>
+          <button id="close"   class="button-dark"> CLOSE </button>
+          <div id="draggable" class="testo-base-dark">I'm draggable! </div>
           <div  style="top: 50%; width: 100%;text-align: center; transform: translate(0%,-50%);position:absolute;">
             <div id="testo-base"class="testo-base-dark">
-              You can find me on Instagram, Behance, LinkedIn,<br></br> or you can just send me an
-               <a href="mailto:francesca180998@gmail.com" style="font-family: sans-serif;font-size: 1.25vw; text-decoration:underline;">e-mail</a>.<br></br>
+              You can find me on <a href="https://www.instagram.com/fazz.esca/?hl=it" style="font-family: sans-serif; text-decoration:underline;" target="_blank">Instagram</a>,
+              <a href="https://www.behance.net/francesfazzini1" style="font-family: sans-serif;text-decoration:underline;" target="_blank">Behance</a>,
+              <a href="https://www.linkedin.com/in/francesca-fazzini-7953061bb/" style="font-family: sans-serif;text-decoration:underline" target="_blank">LinkedIn</a>,<br></br>
+              or you can just send me an
+               <a href="mailto:francesca180998@gmail.com" style="font-family: sans-serif; text-decoration:underline;">e-mail</a>.<br></br>
             </div>
           </div>
         </div>
@@ -96,28 +103,28 @@
 
     <div id="vicevita-dida"  class="testo-base-dark">
       LA VICEVITA, TRENI E VIAGGI IN TRENO <br></br>
-      Bachelor thesis project, PoliMi, 2020
+      Bachelor thesis project / PoliMi / 2020
     </div>
-    <button id="vicevita-discover"  class="button-dark" style="position:absolute;text-align: center; text-decoration:none;bottom:3.75vw"><a href="la-vicevita-treni-e-viaggi-in-treno.html"> DISCOVER</a> </button>
+    <button id="vicevita-discover"  class="button-dark" onclick="discoverVice()">
+     DISCOVER</button>
 
  </section>
 
 <!--SEZIONE COLPEVOLE-->
  <section id="colpevole"style="display:flex;width: 100vw; height: 100vh; position:relative" class="border-dark">
 
-    <img src="images/colpevole1.png" class="colpevole-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
-    <img src="images/colpevole2.png" class="colepvole-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
-    <img src="images/colpevole3.png" class="colpevole-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
-    <img src="images/colpevole4.png" class="colpevole-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
-    <img src="images/colpevole5.png" class="colpevole-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="images/colpevole1.png" class="colpevole-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="images/colpevole2.png" class="colpevole-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="images/colpevole3.png" class="colpevole-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="images/colpevole4.png" class="colpevole-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="images/colpevole5.png" class="colpevole-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
 
+    <div id="colpevole-titolo-ee"> <h1>“Non bianco e nero. Non uomini contro donne. Non alleati o nemici.”  </h1></div>
+    <div id="colpevole-titolo-base"> <h2>“Non bianco e nero. Non uomini contro donne. Non alleati o nemici.”</h2></div>
 
-    <div id="colpevole-titolo-ee"> <h1>"Non bianco e nero. Non uomini contro donne. Non alleati o nemici."  </h1></div>
-    <div id="colpevole-titolo-base"> <h2>"Non bianco e nero. Non uomini contro donne. Non alleati o nemici."</h2></div>
-
-   <div id="colpevole-dida" style="top:27.5vh;left:1.25vw;position:absolute" class="testo-base-dark">
+   <div id="colpevole-dida" class="testo-base-dark">
      COLPEVOLE <br></br>
-     Sociology of communication, PoliMi, 2019 <br></br>
+     Sociology of communication / PoliMi / 2019 <br></br>
      <div style="font-style:italic">
      XI edizione Premio Nostalgia del Futuro <br></br>
     Sezione Design per l’Informazione Giornalistica</div>
@@ -127,11 +134,159 @@
 
 </section>
 
+<!--SEZIONE RIACE-->
+ <section id="riace"style="display:flex;width: 100vw; height: 100vh; position:relative" class="border-dark">
+
+   <img src="images/riace0.png" class="riace-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="images/riace1.png" class="riace-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="images/riace2.png" class="riace-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="images/riace3.png" class="riace-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="images/riace4.png" class="riace-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="images/riace5.png" class="riace-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="images/riace6.png" class="riace-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="images/riace7.png" class="riace-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+
+    <div id="riace-titolo-ee"> <h1>“A Riace siamo abituati a spingere, non a respingere.”  </h1></div>
+    <div id="riace-titolo-base"> <h2>“A Riace siamo abituati a spingere, non a respingere.”</h2></div>
+
+   <div id="riace-dida" class="testo-base-dark">
+    RIACE VILLAGGIO GLOBALE <br></br>
+     Content curation, editorial design / PoliMi / 2018 <br></br>
+   </div>
+
+   <button id="riace-discover"  class="button-dark" style="position:absolute;text-align: center; text-decoration:none;bottom:3.75vw"><a href="riace-villaggio-globale.html"> DISCOVER</a> </button>
+
+</section>
+
+<!--SEZIONE MRS EAVES-->
+ <section id="mrseaves"style="display:flex;width: 100vw; height: 100vh; position:relative" class="border-dark">
+
+   <img src="images/mrs0.png" class="mrseaves-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="images/mrs1.png" class="mrseaves-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="images/mrs2.png" class="mrseaves-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="images/mrs3.png" class="mrseaves-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+
+    <div id="mrseaves-titolo-ee"> <h1>“Se usato nella giusta circostanza regala una sensazione molto particolare che rende il carattere tipografico stesso inconfondibile.”  </h1></div>
+    <div id="mrseaves-titolo-base"> <h2>“Se usato nella giusta circostanza regala una sensazione molto particolare che rende il carattere tipografico stesso inconfondibile.” </h2></div>
+
+   <div id="mrseaves-dida" class="testo-base-dark">
+    MRS EAVES <br></br>
+     Type specimen / PoliMi / 2020 <br></br>
+   </div>
+
+   <button id="mrseaves-discover"  class="button-dark" style="position:absolute;text-align: center; text-decoration:none;bottom:3.75vw"><a href="mrs-eaves.html"> DISCOVER</a> </button>
+
+</section>
+
+<!--SEZIONE ARBUS-->
+ <section id="arbus"style="display:flex;width: 100vw; height: 100vh; position:relative" class="border-dark">
+
+   <img src="images/arbus1.png" class="arbus-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="images/arbus2.png" class="arbus-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="images/arbus3.png" class="arbus-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="images/arbus4.png" class="arbus-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="images/arbus5.png" class="arbus-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+
+    <div id="arbus-titolo-ee"> <h1>“I suoi ritratti sono specchi che restituiscono riflessi diversi di uno stesso soggetto, chi osserva.” </h1></div>
+    <div id="arbus-titolo-base"> <h2>“I suoi ritratti sono specchi che restituiscono riflessi diversi di uno stesso soggetto, chi osserva.” </h2></div>
+
+   <div id="arbus-dida" class="testo-base-dark">
+     DIANE ARBUS, FOTOGRAFA DI <br></br>
+     History of photography, editorial design / PoliMi / 2020 <br></br>
+   </div>
+
+   <button id="arbus-discover"  class="button-dark" style="position:absolute;text-align: center; text-decoration:none;bottom:3.75vw"><a href="diane-arbus.html"> DISCOVER</a> </button>
+
+</section>
+
+<!--SEZIONE FELLINI-->
+ <section id="fellini" style="display:flex;width: 100vw; height: 100vh; position:relative" class="border-dark">
+
+   <img src="images/fellini1.png" class="fellini-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="images/fellini2.png" class="fellini-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="images/fellini3.png" class="fellini-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="images/fellini4.png" class="fellini-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="images/fellini5.png" class="fellini-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+
+    <div id="fellini-titolo-ee"> <h1>“Eppure io credo che se ci fosse un po’ più di silenzio, se tutti facessimo un po’ di silenzio, forse qualcosa potremmo capire…” </h1></div>
+    <div id="fellini-titolo-base"> <h2>“Eppure io credo che se ci fosse un po’ più di silenzio, se tutti facessimo un po’ di silenzio, forse qualcosa potremmo capire…”  </h2></div>
+
+   <div id="fellini-dida" class="testo-base-dark">
+     FEDERICO FELLINI, IL SILENZIO DEI SOGNI <br></br>
+     History of cinema, editorial design / PoliMi / 2020 <br></br>
+   </div>
+
+   <button id="fellini-discover"  class="button-dark" style="position:absolute;text-align: center; text-decoration:none;bottom:3.75vw"><a href="federico-fellini.html"> DISCOVER</a> </button>
+
+</section>
+
+<!--SEZIONE STEINER-->
+ <section id="steiner" style="display:flex;width: 100vw; height: 100vh; position:relative" class="border-dark">
+
+   <img src="images/steiner1.png" class="steiner-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="images/steiner2.png" class="steiner-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="images/steiner3.png" class="steiner-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="images/steiner4.png" class="steiner-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="images/steiner5.png" class="steiner-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+
+    <div id="steiner-titolo-ee"> <h1>“Il designer non si fa portatore di un qualcosa di altro da sé ma trova nel suo stesso
+      lavoro potenzialità rivoluzionarie.” </h1></div>
+    <div id="steiner-titolo-base"> <h2>“Il designer non si fa portatore di un qualcosa di altro da sé ma trova nel suo stesso
+      lavoro potenzialità rivoluzionarie.” </h2></div>
+
+   <div id="steiner-dida" class="testo-base-dark">
+     ALBE STEINER, L'IMPEGNO <br></br>
+     Hitory of graphic design, editorial design / PoliMi / 2018 <br></br>
+   </div>
+
+   <button id="steiner-discover"  class="button-dark" style="position:absolute;text-align: center; text-decoration:none;bottom:3.75vw"><a href="albe-steiner.html"> DISCOVER</a> </button>
+
+</section>
+
+<!--SEZIONE ECOVIE-->
+ <section id="ecovie" style="display:flex;width: 100vw; height: 100vh; position:relative" class="border-dark">
+
+   <img src="images/eco1.png" class="ecovie-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="images/eco2.png" class="ecovie-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="images/eco3.png" class="ecovie-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="images/eco4.png" class="ecovie-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="images/eco5.png" class="ecovie-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+
+    <div id="ecovie-titolo-ee"> <h1>“La nostra meta non è mai un luogo, ma un nuovo modo di vedere le cose.” </h1></div>
+    <div id="ecovie-titolo-base"> <h2>“La nostra meta non è mai un luogo, ma un nuovo modo di vedere le cose.”</h2></div>
+
+   <div id="ecovie-dida" class="testo-base-dark">
+     ECOVIE, AUTOSTRADE INTELLIGENTI <br></br>
+     Branding, illustrations / PoliMi / 2019 <br></br>
+   </div>
+
+   <button id="ecovie-discover"  class="button-dark" style="position:absolute;text-align: center; text-decoration:none;bottom:3.75vw"><a href="ecovie-autostrade-intelligenti.html"> DISCOVER</a> </button>
+
+</section>
+
+<!--SEZIONE ILLUSTRAZIONI-->
+ <section id="illustrazioni" style="display:flex;width: 100vw; height: 100vh; position:relative" class="border-dark">
+
+   <img src="illustrations/cube.png" class="illustrazioni-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="illustrations/levels.png" class="illustrazioni-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="illustrations/80s.png" class="illustrazioni-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="illustrations/moon.png" class="illustrazioni-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="illustrations/aqua.png" class="illustrazioni-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="illustrations/deChirico.png" class="illustrazioni-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="illustrations/wait.png" class="illustrazioni-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="illustrations/liquid.png" class="illustrazioni-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="illustrations/dream.png" class="illustrazioni-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
+   <img src="illustrations/underwater.png" class="illustrazioni-slide" style="top:50%;left:50%;transform: translate(-50%,-50%);position:absolute">
 
 
+   <div id="illustrazioni-dida" class="testo-base-dark">
+     ILLUSTRATIONS <br></br>
+     Personal project / 2019 <br></br>
+   </div>
 
+   <button id="illustrazioni-discover"  class="button-dark" style="position:absolute;text-align: center; text-decoration:none;bottom:3.75vw"><a href="illustrations.html"> DISCOVER</a> </button>
 
-
+</section>
 
 
 
@@ -172,10 +327,11 @@
 
 
 <!---->
-
 window.onload=function(){
-document.querySelector("canvas").style.display="none";
+document.getElementById("loader-box").style.display="none";
 }
+
+
 
 
 
@@ -193,6 +349,19 @@ $(document).ready(function() {
         document.getElementById('vicevita-titolo-base').className="on";
         document.getElementById('colpevole-titolo-ee').className="off";
         document.getElementById('colpevole-titolo-base').className="on";
+        document.getElementById('riace-titolo-ee').className="off";
+        document.getElementById('riace-titolo-base').className="on";
+        document.getElementById('mrseaves-titolo-ee').className="off";
+        document.getElementById('mrseaves-titolo-base').className="on";
+        document.getElementById('arbus-titolo-ee').className="off";
+        document.getElementById('arbus-titolo-base').className="on";
+        document.getElementById('fellini-titolo-ee').className="off";
+        document.getElementById('fellini-titolo-base').className="on";
+        document.getElementById('steiner-titolo-ee').className="off";
+        document.getElementById('steiner-titolo-base').className="on";
+        document.getElementById('ecovie-titolo-ee').className="off";
+        document.getElementById('ecovie-titolo-base').className="on";
+
 
 
         document.getElementById("body").className = "dark"
@@ -203,20 +372,11 @@ $(document).ready(function() {
           if ( keys.length > code.length ) { keys.shift(); }
 
           if ( keys.toString() == code.toString() ) {
-            document.querySelector("marquee").innerHTML = "Congrats! You did it! ";
-
+            document.querySelector("marquee").innerHTML = "© Francesca Fazzini 2020 (You did it!)";
+            document.querySelector("canvas").className = "on";
             document.getElementById("body").className = "ee";
             document.getElementById('intro').className="border-ee";
-            document.getElementById('vicevita').className="border-ee";
-            document.getElementById('colpevole').className="border-ee";
-            document.getElementById('intro-titolo-ee').className="on";
-            document.getElementById('intro-titolo-base').className="off";
-            document.getElementById('vicevita-titolo-ee').className="on";
-            document.getElementById('vicevita-titolo-base').className="off";
-            document.getElementById('colpevole-titolo-ee').className="on";
-            document.getElementById('colpevole-titolo-base').className="off";
-
-
+            document.getElementById('scroll').className="testo-base-ee";
             document.getElementById("mode").className = "button-ee";
             document.getElementById("wannasayhi").className = "button-ee";
             document.getElementById("cv").className = "button-ee";
@@ -225,10 +385,62 @@ $(document).ready(function() {
             document.getElementById("runner").className = "runner-ee";
             document.getElementById("testo-base").className = "testo-base-ee";
             document.getElementById('draggable').className="testo-base-ee";
+
+            document.getElementById('intro-titolo-ee').className="on";
+            document.getElementById('intro-titolo-base').className="off";
+
+            document.getElementById('vicevita').className="border-ee";
+            document.getElementById('vicevita-titolo-ee').className="on";
+            document.getElementById('vicevita-titolo-base').className="off";
             document.getElementById('vicevita-discover').className="button-ee";
             document.getElementById("vicevita-dida").className = "testo-base-ee";
+
+            document.getElementById('colpevole').className="border-ee";
+            document.getElementById('colpevole-titolo-ee').className="on";
+            document.getElementById('colpevole-titolo-base').className="off";
             document.getElementById('colpevole-discover').className="button-ee";
             document.getElementById("colpevole-dida").className = "testo-base-ee";
+
+            document.getElementById('riace').className="border-ee";
+            document.getElementById('riace-titolo-ee').className="on";
+            document.getElementById('riace-titolo-base').className="off";
+            document.getElementById('riace-discover').className="button-ee";
+            document.getElementById("riace-dida").className = "testo-base-ee";
+
+            document.getElementById('mrseaves').className="border-ee";
+            document.getElementById('mrseaves-titolo-ee').className="on";
+            document.getElementById('mrseaves-titolo-base').className="off";
+            document.getElementById('mrseaves-discover').className="button-ee";
+            document.getElementById("mrseaves-dida").className = "testo-base-ee";
+
+            document.getElementById('arbus').className="border-ee";
+            document.getElementById('arbus-titolo-ee').className="on";
+            document.getElementById('arbus-titolo-base').className="off";
+            document.getElementById('arbus-discover').className="button-ee";
+            document.getElementById("arbus-dida").className = "testo-base-ee";
+
+            document.getElementById('fellini').className="border-ee";
+            document.getElementById('fellini-titolo-ee').className="on";
+            document.getElementById('fellini-titolo-base').className="off";
+            document.getElementById('fellini-discover').className="button-ee";
+            document.getElementById("fellini-dida").className = "testo-base-ee";
+
+            document.getElementById('steiner').className="border-ee";
+            document.getElementById('steiner-titolo-ee').className="on";
+            document.getElementById('steiner-titolo-base').className="off";
+            document.getElementById('steiner-discover').className="button-ee";
+            document.getElementById("steiner-dida").className = "testo-base-ee";
+
+            document.getElementById('ecovie').className="border-ee";
+            document.getElementById('ecovie-titolo-ee').className="on";
+            document.getElementById('ecovie-titolo-base').className="off";
+            document.getElementById('ecovie-discover').className="button-ee";
+            document.getElementById("ecovie-dida").className = "testo-base-ee";
+
+            document.getElementById('illustrazioni').className="border-ee";
+            document.getElementById('illustrazioni-discover').className="button-ee";
+            document.getElementById("illustrazioni-dida").className = "testo-base-ee";
+
 
             if(contatti.className="off"){
               document.getElementById("wannasayhi-box").className = "off";
@@ -255,7 +467,7 @@ function vicevita() {
   myIndex++;
   if (myIndex > x.length) {myIndex = 1}
   x[myIndex-1].style.display = "block";
-  setTimeout(vicevita, 500); // Change image every 0.5 seconds
+  setTimeout(vicevita, 500); // Change image every 0.3 seconds
 }
 </script>
 
@@ -273,10 +485,141 @@ function colpevole() {
   a++;
   if (a > c.length) {a = 1}
   c[a-1].style.display = "block";
-  setTimeout(colpevole, 500); // Change image every 0.5 seconds
+  setTimeout(colpevole, 500);
 }
 </script>
 
+<!--SLIDESHOW RIACE-->
+<script>
+var d = 0;
+riace();
+
+function riace() {
+  var e;
+  var f = document.getElementsByClassName("riace-slide");
+  for (e = 0; e < f.length; e++) {
+    f[e].style.display = "none";
+  }
+  d++;
+  if (d > f.length) {d = 1}
+  f[d-1].style.display = "block";
+  setTimeout(riace, 500);
+}
+</script>
+
+<!--SLIDESHOW MRS EAVES-->
+<script>
+var g = 0;
+mrseaves();
+
+function mrseaves() {
+  var h;
+  var j = document.getElementsByClassName("mrseaves-slide");
+  for (h = 0; h < j.length; h++) {
+    j[h].style.display = "none";
+  }
+  g++;
+  if (g > j.length) {g = 1}
+  j[g-1].style.display = "block";
+  setTimeout(mrseaves, 500);
+}
+
+</script>
+
+<!--SLIDESHOW ARBUS-->
+<script>
+var k = 0;
+arbus();
+
+function arbus() {
+  var l;
+  var m = document.getElementsByClassName("arbus-slide");
+  for (l = 0; l < m.length; l++) {
+    m[l].style.display = "none";
+  }
+  k++;
+  if (k > m.length) {k = 1}
+  m[k-1].style.display = "block";
+  setTimeout(arbus, 500);
+}
+
+</script>
+
+<!--SLIDESHOW FELLINI-->
+<script>
+var n = 0;
+fellini();
+
+function fellini() {
+  var o;
+  var p = document.getElementsByClassName("fellini-slide");
+  for (o = 0; o < p.length; o++) {
+    p[o].style.display = "none";
+  }
+  n++;
+  if (n > p.length) {n = 1}
+  p[n-1].style.display = "block";
+  setTimeout(fellini, 500);
+}
+
+</script>
+
+<!--SLIDESHOW STEINER-->
+<script>
+var q = 0;
+steiner();
+
+function steiner() {
+  var r;
+  var s = document.getElementsByClassName("steiner-slide");
+  for (r = 0; r < s.length; r++) {
+    s[r].style.display = "none";
+  }
+  q++;
+  if (q > s.length) {q = 1}
+  s[q-1].style.display = "block";
+  setTimeout(steiner, 500);
+}
+
+</script>
+
+<!--SLIDESHOW ECOVIE-->
+<script>
+var t = 0;
+ecovie();
+
+function ecovie() {
+  var u;
+  var v = document.getElementsByClassName("ecovie-slide");
+  for (u = 0; u < v.length; u++) {
+    v[u].style.display = "none";
+  }
+  t++;
+  if (t > v.length) {t = 1}
+  v[t-1].style.display = "block";
+  setTimeout(ecovie, 500);
+}
+
+</script>
+
+<!--SLIDESHOW ILLUSTRAZIONI-->
+<script>
+var z = 0;
+illustrazioni();
+
+function illustrazioni() {
+  var za;
+  var zb = document.getElementsByClassName("illustrazioni-slide");
+  for (za = 0; za < zb.length; za++) {
+    zb[za].style.display = "none";
+  }
+  z++;
+  if (z >zb.length) {z = 1}
+  zb[z-1].style.display = "block";
+  setTimeout(illustrazioni, 500);
+}
+
+</script>
 
 
 </body>

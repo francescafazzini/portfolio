@@ -25,6 +25,7 @@
 
 
 
+
     <style>
 
   /**generali**/
@@ -439,6 +440,12 @@
 
   <body id="body" class="dark" style="overflow-x:hidden;overflow-y: scroll;cursor:default">
 
+<!--LOADER-->
+      <div id="loader-box" style="width:100vw;height:100vh;position:fixed;z-index:+10; background-color:black">
+        <div id="loader-txt" class="testo-base-dark" > Loading... </div>
+      </div>
+
+
 <!--HEADER E FOOTER-->
     <div id="header" style="width:100vw;height:auto;position:fixed;z-index:+9">
       <div id="francesca" class="francesca-dark" style="top:1.25vw" > FRANCESCA FAZZINI </div>
@@ -449,7 +456,7 @@
 
     <div id="footer" style="width:100vw;bottom:0;height:auto;position:fixed;z-index:+9">
       <div id="runner" class="runner-dark">  <marquee direction="scroll">In this page I hide an Easter egg, can you find it? </marquee></div>
-      <button id="discover"  class="button-dark" style="position:absolute;text-align: center; text-decoration:none;bottom:3.75vw;"><a href="index.html"> BACK</a> </button>
+      <button id="discover"  class="button-dark" onclick="back()"style="position:absolute;text-align: center; text-decoration:none;bottom:3.75vw;">BACK </button>
     </div>
 
 <!--BOX CONTATTI-->
@@ -571,11 +578,18 @@
 
 
 
+
+
 <script src="js/blotter.min.js"></script>
 <script src="https://unpkg.com/draggabilly@2/dist/draggabilly.pkgd.min.js"></script>
 <script src="js/app-progetti.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
 <script type="text/javascript">
+
+window.onload=function(){
+document.getElementById("loader-box").style.display="none";
+}
+
 
 
 
