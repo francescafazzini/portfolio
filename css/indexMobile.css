@@ -173,7 +173,7 @@ canvas{
 /**contatti**/
 .wannasayhi-box-dark{
           width:75vw;
-          height: 30vh;
+          height: 40vh;
           background-color: black;
           visibility: visible;
           top: 50%;
@@ -318,7 +318,7 @@ h2 {
   left:50%;
   transform: translate(-50%,0);
   position:absolute;
-  width: 60vw;
+  width: 75vw;
   border: 0px solid #00ffff;
 }
 h2 span {
@@ -511,14 +511,14 @@ transform: translate(-50%,-50%);
   transform: translate(-50%,0);
   position: absolute;
   width: 30vw;
-  bottom:50px;
+  bottom:25px;
 }
 
 
 #draggable{
 -webkit-animation: flash linear 1s infinite;
 animation: flash linear 1s infinite;
-top:50px;
+top:25px;
 position:absolute;
 left:50%;
 transform:translate(-50%,0)
@@ -527,7 +527,7 @@ transform:translate(-50%,0)
 #scroll{
 -webkit-animation: flash linear 1s infinite;
 animation: flash linear 1s infinite;
-bottom:50px;
+bottom:100px;
 left: 50%;
 text-align: center;
 transform: translate(-50%,0);

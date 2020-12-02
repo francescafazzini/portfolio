@@ -177,7 +177,7 @@ canvas{
 /**contatti**/
 .wannasayhi-box-dark{
           width:30vw;
-          height: 30vh;
+          height: 40vh;
           background-color: black;
           visibility: visible;
           top: 50%;
@@ -224,7 +224,7 @@ canvas{
 .testo-base-dark{
   font-family: sans-serif;
   color:white;
-  font-size: 1.25vw
+  font-size: 1.25vw;
 }
 .testo-base-light{
   font-family: sans-serif;
