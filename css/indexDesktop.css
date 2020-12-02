@@ -1,9 +1,6 @@
 canvas{
-  z-index: 10;
-  top:0;
-  position: fixed;
+  visibility: hidden;
 }
-
 .light {
     background-color::#ffffff ;
     color: #000000;  /**#e6b3ff colore lilla**/
@@ -439,17 +436,84 @@ img{
   left:1.25vw;
   position:absolute
 }
+#vicevita-discover{
+  position:absolute;
+  text-align: center;
+  text-decoration:none;
+  bottom:3.75vw
+}
+#colpevole-dida{
+  top:27.5vh;
+  left:1.25vw;
+  position:absolute
+}
+#riace-dida{
+  top:27.5vh;
+  left:1.25vw;
+  position:absolute
+}
+#mrseaves-dida{
+  top:27.5vh;
+  left:1.25vw;
+  position:absolute;
+}
+#arbus-dida{
+ top:27.5vh;
+ left:1.25vw;
+ position:absolute
+}
+#fellini-dida{
+ top:27.5vh;
+ left:1.25vw;
+ position:absolute
+}
+#steiner-dida{
+ top:27.5vh;
+ left:1.25vw;
+ position:absolute
+}
+#ecovie-dida{
+ top:27.5vh;
+ left:1.25vw;
+ position:absolute
+}
+#illustrazioni-dida{
+  top:27.5vh;
+  left:1.25vw;
+  position:absolute
+ }
+
 a{
  color:inherit;
  text-decoration: none;
+ font-size: 1.25vw;
 }
 @font-face {
   font-family:ortica;
   src: url(font/Ortica-Light.otf);
 }
+#loader-txt{
+-webkit-animation: flash linear 1s infinite;
+animation: flash linear 1s infinite;
+position: absolute;
+top:50%;
+left:50%;
+transform: translate(-50%,-50%);
+}
+
+#close{
+  right:1.25vw;
+  width: 15vw;
+  bottom:1.25vw
+}
+
 #draggable{
 -webkit-animation: flash linear 1s infinite;
 animation: flash linear 1s infinite;
+top:1.25vw;
+position:absolute;
+left:50%;
+transform:translate(-50%,0)
 }
 #scroll{
 -webkit-animation: flash linear 1s infinite;
