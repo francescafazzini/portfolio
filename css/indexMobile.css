@@ -139,12 +139,13 @@ canvas{
 
 /**francesca**/
 .francesca-dark{
-  left:34vw;
+  left:50%;
+  transform: translate(-50%,0);
   position: absolute;
   color: #ffffff;
   font-family: sans-serif;;
   font-size: 14px;
-  width: 30vw;
+  width: 100vw;
   text-align: center;
   cursor: default;
   }
@@ -232,7 +233,7 @@ canvas{
   font-size: 1.25vw
 }
 .runner-dark{
-          bottom: 0vh;
+          bottom: 5px;
           height: 2vh;
           position: absolute;
           background-color: transparent;
@@ -352,7 +353,7 @@ h2 span:hover {
   background-color: black;
 }
 .dark::-webkit-scrollbar {
-  width: 2vw;
+  width: 0vw;
    }
 .dark::-webkit-scrollbar-track {
   background: transparent;
@@ -411,16 +412,17 @@ h2 span:hover {
 }
 #mode{
   top:50px;
-  left:66vw;
+  right: 2vw;
 }
 #wannasayhi{
   position:absolute;
-  left:34vw;
+  left:50%;
+  transform: translate(-50%,0);
   top:50px;
 }
 #cv{
   position:absolute;
-  left:2%;
+  left:2vw;
   text-align: center;
   text-decoration:none;
   top:50px;
@@ -434,14 +436,15 @@ img{
   transform: translate(-50%,0);
   position:absolute;
   text-align: center;
-  width: 100%;
+  width: 100vw;
 }
 #vicevita-discover{
   position:absolute;
   text-align: center;
   text-decoration:none;
   bottom:50px;
-  left:34vw;
+  left:50%;
+  transform: translate(-50%,0);
 }
 
 #colpevole-dida{
@@ -526,8 +529,9 @@ transform:translate(-50%,0)
 animation: flash linear 1s infinite;
 bottom:50px;
 left: 50%;
+text-align: center;
 transform: translate(-50%,0);
-position:absolute
+position:absolute;
 
 }
 
